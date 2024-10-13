@@ -1,0 +1,13 @@
+targets:
+  $default:
+    builders:
+      custom_generator|custom_print:
+        enabled: true
+
+builders:
+  custom_print:
+    import: "package:custom_generator/builder.dart"
+    builder_factories: ["customPrintBuilder"]
+    build_extensions: { ".dart": [".custom_print.g.dart"] }
+    auto_apply: dependents
+    build_to: source
